@@ -22,29 +22,32 @@ A centralized, national-level counter-identity theft and advanced fraud intellig
 ## 🏗️ System Architecture & Data Flow
 
 ```mermaid
-graph TD
-    UI[Streamlit UI Console] 
-    
-    subgraph "Application Logic"
+graph LR
+    subgraph Frontend
+    UI[Streamlit UI Console]
+    end
+
+    subgraph "Logic & Memory"
     State[st.session_state Memory]
     Logic[Python Orchestrator]
     end
-    
-    Gemini[Google Gemini API / gemini-2.5-flash]
-    
+
+    subgraph "External & Storage"
+    Gemini[Google Gemini API]
     DB[(Volatile In-Memory DB)]
     CSV[CSV Export Buffer]
-    
-    UI -->|User Upload/Input| State
+    end
+
+    UI -->|User Input| State
     State -->|Context Payload| Logic
-    Logic -->|Forensic Inference Request| Gemini
+    Logic -->|Forensic Request| Gemini
     Gemini -->|Structured Response| Logic
     Logic -->|State Sync| DB
-    Logic -->|Analytics Stream| CSV
+    Logic -->|Data Stream| CSV
 
     style UI fill:#f1f5f9,stroke:#d97706,stroke-width:2px
     style Gemini fill:#fef3c7,stroke:#b45309,stroke-width:2px
-    style State fill:#ffffff,stroke:#334155,stroke-dasharray: 5 5
+    style Logic fill:#e2e8f0,stroke:#334155,stroke-width:2px
 ```
 ## 🛡️ Data Privacy & Ethical AI Compliance
 This project strictly conforms to the Data Privacy Guidelines on **Page 35 of the Code-A-Thon Brochure**:
