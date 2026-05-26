@@ -56,5 +56,6 @@ This project strictly conforms to the Data Privacy Guidelines on **Page 35 of th
 3. **Synthetic Sanitization:** The Honeypot Ledger and fraud trackers use synthetic dummy profiles to ensure no genuine personal data is stored or exposed.
 
 ## 🛠️ Deployment
-1. Install dependencies: `pip install -r requirements.txt`
-2. Run the application: `streamlit run app.py`
+1.Zeus.ai: `http://localhost:8501/`
+2. Install dependencies: `pip install -r requirements.txt`
+3. Run the application: `streamlit run app.py`
