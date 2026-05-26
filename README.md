@@ -9,14 +9,29 @@ A centralized, national-level counter-identity theft and advanced fraud intellig
 * **⚖️ Scale of Themis:** Adaptive risk metrics combining network, behavioral, and verification signals to trigger access isolation protocols.
 * **🏺 Pandora's Vault:** Active decoy deployment framework hosting synthetic assets to capture and fingerprint malicious scrapers.
 
-## 💻 Technical Infrastructure
+
+## 🏗️ Technical Infrastructure
+
 | Component | Technology | Scope |
 | :--- | :--- | :--- |
-| **Frontend UI** | Streamlit | Responsive web console element styling and routing |
+| **Frontend UI** | Streamlit | Responsive web console elements |
 | **Cognitive AI** | Google Gemini SDK | Multimodal image inspection and strategic context mapping |
 | **Data Engine** | Pandas | Tabular analytics mutations and local export streaming |
 | **Security Core** | Hashlib | Deterministic signature hashing for sentinel logins |
 
+## 🏗️ System Architecture & Data Flow
+
+```mermaid
+graph TD
+    UI[Streamlit UI]
+    Logic[Python Orchestrator]
+    Gemini[Google Gemini API]
+    DB[(In-Memory DB)]
+
+    UI --> Logic
+    Logic --> Gemini
+    Logic --> DB
+```
 ## 🛡️ Data Privacy & Ethical AI Compliance
 This project strictly conforms to the Data Privacy Guidelines on **Page 35 of the Code-A-Thon Brochure**:
 1. **Zero-Retention Processing:** Uploaded identification media streams are handled completely within volatile RAM as binary byte clusters.
